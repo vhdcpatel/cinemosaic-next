@@ -1,17 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import HeaderBar from "@/components/HeaderBar/HeaderBar";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "CineMosaic",
@@ -19,7 +8,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/icons/mainLogo.png",
     apple: "/icons/mainLogo.png",
-  }
+  },
 };
 
 export default function RootLayout({
@@ -29,10 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <HeaderBar/>
+      {/* If you want exclude headerBar from max width then wrap child with custom component.  */}
+      <body className="font-sans antialiased w-full max-w-[1200px] mx-auto px-5">
+        <HeaderBar />
         {children}
       </body>
     </html>

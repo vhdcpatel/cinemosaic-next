@@ -18,7 +18,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* If you want exclude headerBar from max width then wrap child with custom component.  */}
       <body className="font-sans antialiased w-full max-w-[1200px] mx-auto px-5">
         <HeaderBar />
         {children}
